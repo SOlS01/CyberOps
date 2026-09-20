@@ -323,3 +323,172 @@ To combine two commands, we can use the pipe | it will feed the output of one co
 Ps command from an admin is to list the process currently running in the system. 
 
  
+ 
+
+# Module 5 >> 
+
+Route tracing 
+
+Common network protocol for network communication is HTTP/TCP/IP.   
+
+TCP/IP protocol includes many protocols for example: 
+
+Application > name system it uses DNS, file transfer it uses FTP/SFTP/TFTP, for web service it uses HTTP/HTTPS (set of rules for exchanging text, sounds, ...), for host config it uses DHCPv4 and 6/SLAAC (a method that allows a device to have IPv6 address without using DHCPv6 server), for email uses SMTP (simple mail transfer protocol)/POP3/IMAP. 
+
+Transport Layer >> TCP (connection oriented) and UDP (connectionless) 
+
+Internet Layer >> internet protocol it uses IPv4 and 6 and NAT, for messaging it uses ICMPv4 and 6,  
+
+Network access layer >> address resolution it uses the ARP, for the data link protocol it uses the Ethernet. 
+
+ 
+
+Message timing >>  
+
+Flow control: it defines how much information can be sent and the speed at which it can be delivered. 
+
+Response timeout:   
+
+Access method: it determines when someone can send a message. 
+
+Unicast is a one-to-one delivery option, multicast is when a host needs to send messages using a one-to-many delivery options, broadcast if all the hosts need to receive the message at the same time. 
+
+ 
+
+The benefit of using layered model >> OSI open system interconnection, TCP/IP 
+
+Each layer can have its own protocol  
+
+Preventing technology and capability in one layer from affecting other layers  
+
+Providing a common language to describe networking 
+
+ 
+
+# Description of OSI model Layers: 
+
+Application: the application layer contains protocols used for process to process communication 
+
+Presentation: it provides for common representation of the data transferred between application layer services. 
+
+Session: it provides services for presentation layer to organise its dialogue and to manage data exchange. 
+
+Transport: it defines services to segment, transfer and reassemble the data for individual communications between the end devices 
+
+Network: it provides services to exchange the individual pieces of data over the network between identified end devices. 
+
+Data link: it describes methods for exchanging data frames between devices over a common media 
+
+Physical layer: describe the mechanical, electrical, active or de-activate physical connections 
+
+# TCP/IP model description: 
+
+Application: represent data to the user and encoding and dialog control 
+
+Transport: supports communication between various devices across diverse network 
+
+Internet: determine the best path through the network 
+
+Network access: it controls the hardware devices and media that make up the network 
+
+Message segmenting has its own benefit which is increase speed and increase efficiency for example when one of the segments failed because of the network congestion only that one needs to be send again. 
+
+Sequencing is important because the receiver needs to be able to reassemble the data again, so sequence number is needed. 
+
+ 
+
+Protocol Data Unit (PDU) >> it happens during encapsulation where each layer adds its own and passes it down to other layer. 
+
+Data-data-data-segment-packet-frame-bits 
+
+ 
+
+# For network communication we need 3 addresses: 
+
+Transport layer uses protocol address (port number) to identify network applications that should handle client and server data. 
+
+Network layer it specifies addresses that identify the clients and servers which attached to the clients and servers,  
+
+Data link it specifies the devices on the local LAN that should handle data frame. 
+
+Encapsulation example >> data then TCP segments then IP packets and all in an ethernet frame will be sent to the web client it is called the protocol stack. 
+
+Decapsulation is encapsulation backward, (decoding ) 
+
+
+
+Module 6 >> 
+
+Ethernet: it operates in data link layer and physical layer, defined in the IEEE 802.2 and 802.3, specifies that a network implement the CSMA/CD access control method.the min ethernet frame size is 64 bytes and max is 1518. Preamble is not included in the size. If the transmitted frame is not in the range size, then it will be dropped by the receiving device. 
+
+# Field of ethernet frame:  
+
+Preamble: start of the frame, used for synchronisation between the sending and receiving device., it is used to get the attention of the receivers and tell them to get ready to receive a new frame. 8byte 
+
+Destination MAC address: identifier for the intended recipient, used by Layer2 to assist devices in determining if a frame is addressed to them. 6byte 
+
+Source MAC address: it identifies the originating NIC or interface of the frame; a source MAC address can only be a unicast address. 6byte 
+
+Type/length: it identifies the upper layer protocol encapsulation in the ethernet frame. 2 bytes 
+
+Data field: it contains the encapsulated data from a higher layer, all must be 64bytes if not additional bits called a pad are used to increase the size of the frame to the minimum size. 
+
+Frame check sequence: it is used to detect errors in a frame; it is used the cyclic redundancy check. 
+
+MAC address can be represented with dashes 00-60-2F-3A-07-BC, colons, periods 0060.2F3A.07BC 
+
+Data link layer is responsible for raking an IP packet and preparing it for transmission over the communication medium. 
+
+ 
+
+# Network Layer >>  
+
+IPv4, IPv6, open shortest path first OSPF, internet control message protocol ICMP 
+
+This layer encapsulates the protocol data unit from the transport layer into a packet. 
+
+IP encapsulates the transport layer segments by adding an IP header which is used to deliver the packet to the destination host. This IP headers examined by layer 3 devices like router and layer 3 switches, IP remains the same after leaving the source host until it arrives to the destination except NAT for IPv4 because it is used a public IP address for private for extra security. 
+
+Connectionless means there is no connection with the destination before sending data. Best effort means there is no guarantee in packet delivery. Media independent means operation is independent of the medium like fiber-optic or wireless carrying the data. 
+
+Fragmentation it is when a router must split up an IPv4 packet when forwarding it from one medium to another one because of the maximum transmission unit, fragmentation causes latency. IPv6 cannot be fragmented by the router. 
+
+The IPv4 packet header is used to ensure that this packet is delivered to its next stop on the way to its destination end device, the header checksum used to detect corruption in the IPv4 header. 
+
+ 
+
+Subnet mask is used to identify the network/host portion of the IPv4 address. 1 for the network portion and 0 for the host portion. 
+
+The more broadcast traffic is good but in other hand it will slow down the internet. 
+
+Reserved private IPv4 address >>  
+
+10.0.0.0/8 - 172.16.0.0/12 - 192.168.0.0/16 NAT network address translation is used to translate between private IPv4 and public IPv4 addresses  
+
+Network layer direct packets between hosts > hosts can send packet to:  
+
+To ensure that their packets are dedicated to the correct network destination they must keep their own local routing table that contains a route to the loopback interface, a local network route, and a remote default route. 
+
+Itself > ping itself which is a loopback interface. 
+
+Local host > destination host in local network 
+
+Remote host > destination host on the remote network 
+
+ Default Gateway is the network device which can route traffic to other networks. 
+
+Host Routing Table >> to display we need route print and netstat –r commands 
+
+ 
+
+IPv6 addresses are 128 bits, and its prefix length can till 128, every 4 bits represent by a single hex which is 16 binary digits,  
+
+Rule one >> omit the zeros from the left-hand side in each hextet to reduce notation. 4 zeros will be one 0 
+
+Rule two >> to reduce notation a double colon can replace any single or same near each other strings consist of all zeros. (after rule 2 delete same strings in row when they placed near each other if they are 3 or 4 separates then instead leave 2 colon) 
+
+Ex: 2001:0db8:0000:0000:ab00:0000:0000:0000 >> 2001:db8:0:0:ab00:: 
+
+Pinging 127.0.0.1 is the local loopback address on any TCP/IP network device, to verify the protocol stack on a particular device. 
+
+ANDing allow us to identify the network address of the destination network. 
