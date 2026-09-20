@@ -417,7 +417,7 @@ Decapsulation is encapsulation backward, (decoding )
 
 
 
-Module 6 >> 
+# Module 6 >> 
 
 Ethernet: it operates in data link layer and physical layer, defined in the IEEE 802.2 and 802.3, specifies that a network implement the CSMA/CD access control method.the min ethernet frame size is 64 bytes and max is 1518. Preamble is not included in the size. If the transmitted frame is not in the range size, then it will be dropped by the receiving device. 
 
