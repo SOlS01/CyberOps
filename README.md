@@ -492,3 +492,34 @@ Ex: 2001:0db8:0000:0000:ab00:0000:0000:0000 >> 2001:db8:0:0:ab00::
 Pinging 127.0.0.1 is the local loopback address on any TCP/IP network device, to verify the protocol stack on a particular device. 
 
 ANDing allow us to identify the network address of the destination network. 
+
+
+ 
+
+# Module 7 >> connectivity verification 
+
+ICMP can help us understand both normal and abnormal network behaviour, they create special packets that test the network.  
+
+Host confirmation: to determine if a host is operational or not 
+
+# Destination or service unreachable: codes for it are > 0 net/ 1 host/ 2 protocol/ 3 port 
+
+Time exceeded 
+
+Route redirection 
+
+ 
+
+ICMPv6 includes four new protocols as part of the neighbour discovery protocol >> message between IPv6 router and device, router solicitation and advertisement  
+
+Message between IPv6 devices, neighbour solicitation (when the devices know the IP but not the MAC it is the same as ARP) and advertisement (it is the response with the ethernet MAC address of the device) 
+
+We can ping each device and the router to make sure about their connectivity, if we couldn’t ping a router its maybe because the default gateway configured wrong or because of security purposes it prevents the response. 
+
+Traceroute is a utility that generates a list of hops that were successfully reached along the path. An asterisk * is used to indicate a lost or unreplied packet. TTL or time to live will continue to increase until it reaches the destination but each time it will get to a hob will send a time exceeded message back and start over to find new hob until getting to the destination. 
+
+ICMPv6 uses DAD to make sure that a unique IPv6 is configured on the interface. 
+
+# ICMP packet format >>  
+
+It is encapsulated directly into IP packets; it is like the transport layer. Common codes are: 0 echo reply/ 3 destination unreachable/ 5 redirect/ 8 echo request/ 11 time exceeded
