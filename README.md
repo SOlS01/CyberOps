@@ -523,3 +523,18 @@ ICMPv6 uses DAD to make sure that a unique IPv6 is configured on the interface.
 # ICMP packet format >>  
 
 It is encapsulated directly into IP packets; it is like the transport layer. Common codes are: 0 echo reply/ 3 destination unreachable/ 5 redirect/ 8 echo request/ 11 time exceeded
+
+
+# Module 8 >> Address Resolution Protocol 
+
+A device got two primary address which are physical MAC and logical IP 
+
+
+The layer 2 ethernet frame contain the destination MAC address and then source MAC address, the layer 3 IP packet contains source IP address then destination IP address. WHEN ON THE SAME NETWORK 
+
+
+The layer 2 will change based on the location because the source device must send the packet to its default gateway when delivering to the remote network but layer 3 will be the same in this journey. 
+
+Remember that the entries in the ARP table are not permanent and will store in RAM. 
+
+After each broadcast is a unicast. 
