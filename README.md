@@ -538,3 +538,38 @@ The layer 2 will change based on the location because the source device must sen
 Remember that the entries in the ARP table are not permanent and will store in RAM. 
 
 After each broadcast is a unicast. 
+
+
+# Module 9 >> The Transport Layer 
+
+This layer uses two protocols: Transmission Control Protocol TCP and User Datagram Protocol UDP 
+
+The transport layer uses port number as an identifier for the target application. 
+
+TCP must first establish a connection between the sender and the receiver that's why we call it connection-oriented protocol 
+
+UDP requires fewer header fields because it is simpler than TCP, it is a connectionless protocol, and it also called as best effort delivery protocol. 
+
+TCP 3-way handshake > SYN,SYN/ACK,SYN it will validate that the destination host is available to communicate 
+
+Session termination 2-way handshake >> FIN, ACK, ACK 
+
+The window size is the number of bytes that the destination device of a TCP session can accept and process at one time. 
+
+The window size provides the flow controls. 
+
+Transport layer responsibilities >>  
+
+- Tracking individual conversations 
+
+- Segmenting data and reassembling segments 
+
+- Add header information 
+
+- Identifying the applications  
+
+- Conversation multiplexing 
+
+A TCP sliding window allows a destination device to inform a source to slow the rate of transmission. 
+
+A server cannot have two service assigned to the same port number within the same transport layer services. Each application process running on the server is configured to use a port number. 
