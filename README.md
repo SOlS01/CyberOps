@@ -573,3 +573,30 @@ Transport layer responsibilities >>
 A TCP sliding window allows a destination device to inform a source to slow the rate of transmission. 
 
 A server cannot have two service assigned to the same port number within the same transport layer services. Each application process running on the server is configured to use a port number. 
+
+
+# Module 10 >> Network Service 
+
+DHCP can allocate IP addresses for a configurable period, called a lease period. 
+
+DHCP operation >> discover (it is a broadcast from the client), offer, request, DHCPACK 
+
+Usually, static IPv4 addresses are assigned to Gateway routers and Printers. 
+
+Top level domains >> .com .org .au .co .edu .net 
+
+DNS uses UDP port 53, if a DNS response exceeds 512 bytes such as when Dynamic DNS is used, TCP port 53 is used to handle the message, Dynamic DNS allows to register an IP address with a domain name as in DNS. 
+
+Ipconfig /displaydns command is used to display all the cached DNS entries. 
+
+NAT table uses the inside global and share it with the outside. 
+
+FTP requires 2 connections one for establishing connection to the server for control traffic it will use TCP port 21, second one is for actual data transfer by using TCP port 20. TFTP is a simplified file transfer protocol uses UDP port 69. We also got SMB file sharing. 
+
+HTTP is a request/response protocol that uses TCP port 80, http methods are GET, POST, PUT, DELETE, OPTIONS, CONNECT, https uses the port 443 because it is forbidden and secure. 
+
+POP3 protocol enables mail to be downloaded from an email server to a client and then deletes the email from the server. 
+
+SMTP is used for sending or forwarding emails. 
+
+SMTP, IMAP, POP are three application layer protocols for email applications. 
