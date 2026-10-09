@@ -600,3 +600,37 @@ POP3 protocol enables mail to be downloaded from an email server to a client and
 SMTP is used for sending or forwarding emails. 
 
 SMTP, IMAP, POP are three application layer protocols for email applications. 
+
+# Module 11 >> 
+
+Routers have two primary functions: path determination (build and maintain a routing table) and packet forwarding (by switching function means by accepting a packet and forward it to another interface) 
+
+A packet travels from a source device to the destination device the layer 3 IP addresses do not change because the layer 3 PDU does not change only the layer 2 which is MAC addresses to get to the next router till the destination. 
+
+ 
+
+# IPv4 > ARP table > ARP request > ARP reply 
+
+# IPv6 > neighbor cache > neighbor solicitation NS > neighbor advertisement NA 
+
+ 
+
+The Routing table contains the directly connected routes and remote routes. 
+
+OSPF or EIGRP is really useful in dynamic routing because each router will share all the information they got with each other, like if a path is cut, or the router is shut down. 
+
+Wireless frames contain Addresses which are source and destination addresses and the access point; the 4th one is usually missing because it is used only in ad hoc mode. FCS it is a layer 2 error control. 
+
+Client and AP association >>  
+
+Discovery: send a probe request to the AP with or without a known SSID in active mode, listen for beacon frames to find WLAN SSIDs in passive mode. 
+
+Authentication: agree with AP to share open authentication and imitate shared key authentication process 
+
+Association: receive AP’s MAC address, receive AP’s association identifier, send client’s MAC address to AP 
+
+A switch uses MAC addresses to determine the exit port. STP is used to prevent layer 2 loops. 
+
+A switch to build into its table examine the source MAC address and to forward a frame use the destination MAC address. 
+
+A wireless LAN controller WLC can be configured to manage multiple LWAP. 
